@@ -239,3 +239,166 @@ footer {
         margin: 0 0.5rem;
     }
 }
+/* TV Card Styles */
+.tv-card {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.tv-card::after {
+    content: 'Click to expand';
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: var(--dark-green);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tv-card:hover::after {
+    opacity: 1;
+}
+
+/* TV Modal Styles */
+.tv-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.tv-modal-content {
+    width: 90%;
+    max-width: 1200px;
+    position: relative;
+}
+
+.tv-screen {
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+    height: 85vh;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.tv-inner {
+    padding: 40px;
+    position: relative;
+    overflow: auto;
+    height: 100%;
+    border-radius: 18px;
+}
+
+.close-tv {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    color: var(--dark-green);
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-tv:hover {
+    color: #900;
+}
+
+.modal-img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tv-content {
+    margin-top: 25px;
+}
+
+.modal-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tv-content h3 {
+    margin: 30px 0 15px;
+    color: var(--dark-green);
+    font-size: 1.4rem;
+}
+
+.tv-content h4 {
+    color: var(--dark-green);
+    margin: 25px 0 10px;
+    font-size: 1.2rem;
+}
+
+.tv-content ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.tv-content li {
+    margin-bottom: 8px;
+}
+
+/* TV Screen Turn On/Off Animations */
+.tv-turn-on {
+    animation: tvTurnOn 0.7s ease-out forwards;
+    clip-path: inset(50% 0 50% 0);
+}
+
+.tv-turn-off {
+    animation: tvTurnOff 0.5s ease-in forwards;
+}
+
+@keyframes tvTurnOn {
+    0% {
+        clip-path: inset(50% 0 50% 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes tvTurnOff {
+    0% {
+        clip-path: inset(0 0 0 0);
+    }
+    100% {
+        clip-path: inset(50% 0 50% 0);
+    }
+}
+
+/* TV static effect on open and close */
+.tv-turn-on::before, .tv-turn-off::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(255, 255, 255, 0.2), transparent);
+    pointer-events: none;
+    z-index: 2;
+    animation: staticEffect 0.3s linear;
+}
+
+@keyframes staticEffect {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}

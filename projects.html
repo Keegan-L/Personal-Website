@@ -20,24 +20,227 @@
     </nav>
     
     <!-- Projects Section -->
-    <section class="container">
-        <h1>Personal Projects</h1>
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="/api/placeholder/400/200" alt="LLM Hallucination Detection" class="project-img">
-                <div class="project-content">
-                    <h3>LLM Hallucination Detection</h3>
-                    <p>Research project at Yang Lab focused on detecting and analyzing the origins of hallucinations in large language models. This work involves developing novel methodologies to trace and identify when LLMs generate content that isn't grounded in their training data.</p>
-                    <p>Technologies: PyTorch, Transformers, Natural Language Processing</p>
+<section class="container">
+    <h1>Personal Projects</h1>
+    <div class="projects-grid">
+        <!-- Mock Cryptocurrency Project Card -->
+        <div class="project-card tv-card" onclick="openTVModal('crypto-modal')">
+            <div class="project-content">
+                <h3>Blockchain: P2P Cryptocurrency</h3>
+                <p>Developed a peer-to-peer cryptocurrency system with a complete blockchain implementation. This project includes a decentralized network of nodes that can process transactions, mine new blocks using proof-of-work, and maintain synchronized ledgers while incentivizing miners through transaction fees.</p>
+                <p>Technologies: Python, Socket Programming, Multithreading, Blockchain</p>
+            </div>
+        </div>
+
+        <!-- Literary Text Embedding Analysis Project Card -->
+        <div class="project-card tv-card" onclick="openTVModal('preprocessing-modal')">
+            <div class="project-content">
+                <h3>Literary Text Embedding Analysis</h3>
+                <p>Developed a comprehensive pipeline to analyze how emotion is encoded in the embedding spaces of language models. This CRIS Lab project processes 40+ books from the Gutenberg library across diverse genres (horror, fantasy, mystery, romance, etc.), creating high-quality vector representations to study how emotional content clusters.</p>
+                <p>Technologies: Python, PyTorch, Transformers, BERT, Gutenberg Cleaner</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-content">
+                <h3>More Projects</h3>
+                <p>This page is currently a work in progress and more of my projects are being added. For a more extensive overview of my work, please visit my Github and Linkedin (links are at the bottom of the home page)</p>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<!-- Cryptocurrency Project Modal -->
+<div id="crypto-modal" class="tv-modal">
+    <div class="tv-modal-content">
+        <div class="tv-screen">
+            <div class="tv-inner">
+                <span class="close-tv" onclick="closeTVModal('crypto-modal')">&times;</span>
+                <h2>Blockchain: Peer-to-Peer Cryptocurrency System</h2>
+                <div class="tv-content">
+                    <div class="modal-layout">
+                        
+                        <p>I developed a functional cryptocurrency system built on blockchain technology. The system includes a distributed network of nodes that can mine blocks, process transactions, and maintain a synchronized blockchain across the network.</p>
+                        
+                        <img src="/data/Crypto File Structure.png" alt="Crypto File Structure" class="modal-img">
+                        
+                        <h3>System Architecture</h3>
+                        
+                        <h4>1. Blockchain Implementation</h4>
+                        <p>The core of the system is a blockchain implementation featuring:</p>
+                        <ul>
+                            <li>Proof-of-work consensus mechanism with adjustable difficulty</li>
+                            <li>Transaction validation and processing</li>
+                            <li>Automatic mining rewards (10% transaction fee)</li>
+                            <li>Chain synchronization across nodes</li>
+                        </ul>
+                        
+                        <h4>2. Node Network</h4>
+                        <p>Each node in the network can:</p>
+                        <ul>
+                            <li>Broadcast transactions to all active nodes</li>
+                            <li>Mine new blocks with valid transactions</li>
+                            <li>Receive and process blockchain updates from peers</li>
+                            <li>Maintain a local copy of the blockchain</li>
+                            <li>Track account balances based on transaction history</li>
+                        </ul>
+                        
+                        <h4>3. User Interface</h4>
+                        <p>The system includes a console-based wallet interface that allows users to:</p>
+                        <ul>
+                            <li>Send ChimChimCoins to other users in the network</li>
+                            <li>View current account balance</li>
+                            <li>View active nodes in the network</li>
+                            <li>Examine the blockchain's transaction history</li>
+                        </ul>
+                        
+                        <h3>Technical Implementation</h3>
+                        <p>The project is implemented in Python and takes advantage of:</p>
+                        <ul>
+                            <li>Socket programming for network communication</li>
+                            <li>Multithreading for concurrent processing (mining, network listening, etc.)</li>
+                            <li>JSON for data serialization and blockchain storage</li>
+                            <li>Cryptographic hashing for block validation</li>
+                            <li>Queue management for transaction processing</li>
+                        </ul>
+                        
+                        <h3>Challenges & Solutions</h3>
+                        <ul>
+                            <li>Blockchain Synchronization: Implemented a mechanism to compare chain lengths and resolve conflicts by selecting the longest valid chain</li>
+                            <li>Concurrent Transaction Processing: Used thread-safe queues to manage incoming transactions while mining</li>
+                            <li>Network Resilience: Implemented error handling and peer management to handle node connections and disconnections</li>
+                        </ul>
+                        
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Decentralized architecture with no central authority</li>
+                            <li>Transparent transaction ledger accessible to all network participants</li>
+                            <li>Secure cryptographic validation of transactions</li>
+                            <li>Economic incentives for miners through transaction fees</li>
+                        </ul>
+                        <h3><a href="https://github.com/Keegan-L/Blockchain-Mock-Crypto" target = "blank">Repository</a></h3>
+                        
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+
+<!-- Literary Text Embedding Modal (Previous Modal) -->
+<div id="preprocessing-modal" class="tv-modal">
+    <div class="tv-modal-content">
+        <div class="tv-screen">
+            <div class="tv-inner">
+                <span class="close-tv" onclick="closeTVModal('preprocessing-modal')">&times;</span>
+                <h2>Literary Text Embedding Analysis for Emotional Clustering</h2>
+                <div class="tv-content">
+                    <div class="modal-layout">
+                        
+                        <p>At Columbia's CRIS Lab (Computational Research on Interpretations and Semantics), I developed a computational pipeline to investigate whether language model embedding spaces naturally cluster by emotional content. This project involves processing over 40 literary texts spanning horror, fantasy, mystery, romance, and other genres from the Gutenberg library, transforming them into vector representations, and analyzing the resulting embedding space.</p>
+                        
+                        <h3>Project Pipeline</h3>
+                        
+                        <h4>1. Text Preprocessing & Chapterization</h4>
+                        <img src="/data/Cleaner Code.png" alt="Text Cleaning Code" class="modal-img">
+                        <p>My pipeline begins by organizing literary texts from the Gutenberg corpus by genre. The process includes:</p>
+                        <ul>
+                            <li>Automated chapter detection using both standard and custom chapterization algorithms</li>
+                            <li>Cleaning texts to remove metadata, headers, and other non-narrative content using the Gutenberg Cleaner library</li>
+                            <li>Handling edge cases where standard chapterization fails with a fallback custom solution</li>
+                            <li>Preserving genre information throughout the processing pipeline</li>
+                        </ul>
+                        <p>The code systematically processes each book within its genre directory, creating a well-structured dataset of chapters ready for vectorization.</p>
+                        
+                        <h4>2. Text Vectorization & Embedding Generation</h4>
+                        <img src="/data/Embedding Code.png" alt="Vector Embeddings Visualization" class="modal-img">
+                        <p>The second phase transforms the cleaned, chapterized text into high-dimensional vectors:</p>
+                        <ul>
+                            <li>Using transformer-based models to generate contextual embeddings</li>
+                            <li>Extracting [CLS] token representations as chapter-level embeddings</li>
+                            <li>Maintaining the association between embeddings and their source genres</li>
+                            <li>Handling long texts through appropriate truncation and padding strategies</li>
+                        </ul>
+                        <p>Each chapter is independently vectorized, creating a rich dataset of embeddings that capture the semantic and potentially emotional characteristics of the text.</p>
+                        
+                        <h4>3. Embedding Space Analysis</h4>
+                        <p>We are currently working on this phase of the project. This final stage involves analyzing the embedding space to determine if emotional content naturally clusters based on the vector representations generated in the previous step.</p>
+                        
+                        <h3>Technical Challenges</h3>
+                        <ul>
+                            <li>Processing a diverse corpus with inconsistent formatting</li>
+                            <li>Handling long literary texts within the context window constraints of transformer models</li>
+                            <li>Developing fallback mechanisms for texts that resist standard chapterization</li>
+                            <li>Managing memory constraints when generating embeddings for large datasets</li>
+                        </ul>
+                        
+                        <h3>Impact</h3>
+                        <p>This research contributes to our understanding of how language models encode and process emotions in text. The findings may inform future model design and provide insights into how artificial neural networks represent complex human emotional concepts.</p>
+                        
+                        <h3>Technologies</h3>
+                        <p>Python, PyTorch, Hugging Face Transformers, BERT, AutoTokenizer, scikit-learn for visualization and clustering</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     
     <!-- Footer -->
     <footer>
         <div class="container">
         </div>
     </footer>
+
+    <!-- JavaScript for TV Screen Effect -->
+    <script>
+        function openTVModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = "flex";
+            
+            // Add TV turn on animation class
+            const tvScreen = modal.querySelector('.tv-screen');
+            tvScreen.classList.add('tv-turn-on');
+            
+            // Play "TV on" sound effect (optional)
+            // const tvOnSound = new Audio('path-to-tv-on-sound.mp3');
+            // tvOnSound.play();
+            
+            // Don't remove the animation class to keep the screen fully visible
+        }
+        
+        function closeTVModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const tvScreen = modal.querySelector('.tv-screen');
+            
+            // Remove turn on class if present
+            tvScreen.classList.remove('tv-turn-on');
+            
+            // Add TV turn off animation class
+            tvScreen.classList.add('tv-turn-off');
+            
+            // Play "TV off" sound effect (optional)
+            // const tvOffSound = new Audio('path-to-tv-off-sound.mp3');
+            // tvOffSound.play();
+            
+            // Wait for animation to complete before hiding modal
+            setTimeout(() => {
+                modal.style.display = "none";
+                tvScreen.classList.remove('tv-turn-off');
+            }, 700);
+        }
+        
+        // Close modal if clicked outside content
+        window.addEventListener('click', function(event) {
+            const modals = document.getElementsByClassName('tv-modal');
+            for (let modal of modals) {
+                if (event.target === modal) {
+                    const modalId = modal.getAttribute('id');
+                    closeTVModal(modalId);
+                }
+            }
+        });
+    </script>
 </body>
 </html>
