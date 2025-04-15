@@ -24,6 +24,15 @@
 <section class="container">
     <h1>Personal Projects</h1>
     <div class="projects-grid">
+        <!-- Code Analysis RAG Project Card -->
+        <div class="project-card tv-card" onclick="openTVModal('code-analysis-modal')">
+            <div class="project-content">
+                <h3>Code Analysis RAG System</h3>
+                <p>Built a specialized RAG (Retrieval Augmented Generation) system designed to analyze and understand complex codebases through semantic search and contextual understanding. The system efficiently navigates large repositories, providing detailed explanations and insights about code functionality and architecture.</p>
+                <p>Technologies: Python, LangChain, Vector Databases, LLMs, Semantic Search</p>
+            </div>
+        </div>
+
         <!-- Mock Cryptocurrency Project Card -->
         <div class="project-card tv-card" onclick="openTVModal('crypto-modal')">
             <div class="project-content">
@@ -51,6 +60,114 @@
         
     </div>
 </section>
+
+<!-- Code Analysis RAG Project Modal -->
+<div id="code-analysis-modal" class="tv-modal">
+    <div class="tv-modal-content">
+        <div class="tv-screen">
+            <div class="tv-inner">
+                <span class="close-tv" onclick="closeTVModal('code-analysis-modal')">&times;</span>
+                <h2>Code Analysis RAG System</h2>
+                <div class="tv-content">
+                    <div class="modal-layout">
+                        
+                        <h3><a href="https://github.com/Keegan-L/Code-Analysis-Rag" target="_blank">GitHub Repository</a></h3>
+                        
+                        <p>I developed a specialized Retrieval Augmented Generation (RAG) system designed to analyze and understand complex codebases. This tool enables developers to quickly comprehend unfamiliar repositories through natural language interaction and semantic search.</p>
+                        
+                        <h3>Functionality</h3>
+
+                        <h4>1. Code Repository Upload</h4>
+
+                        <img src="/data/Code Ingest.png" alt="Code Ingest Page" class="modal-img">
+
+                        <h4>2. Code Summary</h4>
+
+                        <h5>Provides a summary of the code repository, which is uploaded as a zip file.</h5>
+
+                        <h4>3. Generate Documentation</h4>
+                        
+                        <h5>The green button below generates a duplicate of the uploaded repository zip file, with each file having generated code documentation prepended at the top.</h5>
+
+                        <img src="/data/Code Summary.png" alt="Code Ingest Page" class="modal-img">
+
+                        <h4>4. Code Inquiry Chatbot</h4>
+
+                        <h5>RAG agent allows user to ask specific questions about the code functionality, specific </h5>
+                        <h3>System Architecture</h3>
+
+                        <img src="/data/Code Question.png" alt="Code Ingest Page" class="modal-img">
+                        
+                        <h3>System Architecture</h3>
+
+                        <h4>1. Code Ingestion Pipeline</h4>
+                        <p>The system features a sophisticated ingestion pipeline that:</p>
+                        <ul>
+                            <li>Automatically traverses repository file structures</li>
+                            <li>Identifies code files while filtering out non-essential elements</li>
+                            <li>Parses and chunks code files for optimal semantic embedding</li>
+                            <li>Preserves contextual relationships between code segments</li>
+                        </ul>
+                        
+                        <h4>2. Semantic Indexing</h4>
+                        <p>The indexing component utilizes:</p>
+                        <ul>
+                            <li>Advanced vector embeddings to capture code semantics</li>
+                            <li>Hierarchical representation to maintain project structure</li>
+                            <li>Context-aware retrieval for improved relevance</li>
+                            <li>Efficient vector database storage for fast querying</li>
+                        </ul>
+                        
+                        <h4>3. Query Understanding Engine</h4>
+                        <p>The system features a sophisticated query processing system that:</p>
+                        <ul>
+                            <li>Interprets natural language queries about code functionality</li>
+                            <li>Translates high-level questions into precise vector searches</li>
+                            <li>Identifies relevant code segments across multiple files</li>
+                            <li>Aggregates context from related code components</li>
+                        </ul>
+                        
+                        <h4>4. Response Generation</h4>
+                        <p>Using retrieved context, the system:</p>
+                        <ul>
+                            <li>Synthesizes comprehensive explanations of code functionality</li>
+                            <li>Provides architectural insights into repository structure</li>
+                            <li>Explains relationships between different components</li>
+                            <li>Generates summaries at varying levels of technical detail</li>
+                        </ul>
+                        
+                        <h3>Technical Implementation</h3>
+                        <p>The project leverages multiple advanced technologies:</p>
+                        <ul>
+                            <li>Python for core functionality and processing</li>
+                            <li>LangChain for orchestrating the RAG workflow</li>
+                            <li>Vector databases for efficient semantic storage and retrieval</li>
+                            <li>Large Language Models for context-aware response generation</li>
+                            <li>Semantic search algorithms for relevant code retrieval</li>
+                        </ul>
+                        
+                        <h3>Challenges & Solutions</h3>
+                        <ul>
+                            <li>Code Chunking Strategy: Developed specialized chunking methods that preserve function boundaries and maintain context</li>
+                            <li>Contextual Relevance: Implemented hybrid retrieval methods that combine semantic search with structural understanding</li>
+                            <li>Repository Navigation: Created a mapping system to maintain file relationships while enabling targeted searches</li>
+                            <li>Query Disambiguation: Built a query refinement system to clarify ambiguous questions about complex codebases</li>
+                        </ul>
+                        
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Natural language interface for code exploration</li>
+                            <li>Cross-file context awareness for comprehensive understanding</li>
+                            <li>Architectural insights about repository structure</li>
+                            <li>Function-level explanations with relevant code snippets</li>
+                            <li>Project-wide documentation capabilities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Cryptocurrency Project Modal -->
 <div id="crypto-modal" class="tv-modal">
